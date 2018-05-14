@@ -47,13 +47,10 @@ void setup() {
   pinMode(inputPin, INPUT);
   pinMode(potiPin, INPUT);
   processing = -1;
-  //Serial.println("setup");
 }
 
 void loop() {
-//  Serial.print(IsTriggerSet());
-//  Serial.print("\t");
-//  Serial.println(maxProcessingCount);
+
   maxProcessingCount = map(analogRead(potiPin), 0,1023, 0,50);
 
   if (IsTriggerSet())
@@ -64,14 +61,13 @@ void loop() {
       digitalWrite(triggerPin, HIGH);
       delay(500);
       digitalWrite(triggerPin, LOW);
-      //Serial.println("fade in");
+
       processing = maxProcessingCount;
       FadeIn(20);
     }
     if (processing > -1)
     {
       // set re-trigger count
-      //Serial.println("set re-trigger count");
       digitalWrite(triggerPin, HIGH);
       delay(500);
       digitalWrite(triggerPin, LOW);
