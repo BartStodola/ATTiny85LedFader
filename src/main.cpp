@@ -1,6 +1,8 @@
 #include <Arduino.h>
+#include "Fader.h"
 // for ATTiny85
 // on button pressed fade led in stay for n-sec. and fade out
+Fader fader = Fader();
 
 const int triggerPin =0;//LED
 const int ledPin = 1;  // LED
